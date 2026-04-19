@@ -1,0 +1,14 @@
+{
+  "name": "natv-de-sua-casa",
+  "version": "3.0.0",
+  "description": "NaTV de Sua Casa — IPTV Brasil",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js",
+    "build": "echo \"NaTV build OK\""
+  },
+  "engines": { "node": "20.x" },
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}

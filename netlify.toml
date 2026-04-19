@@ -1,0 +1,44 @@
+[build]
+  publish = "public"
+  functions = "netlify/functions"
+
+[functions]
+  node_bundler = "esbuild"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "SAMEORIGIN"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Cache-Control = "public, max-age=3600"
+
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=604800, immutable"
+
+[[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/:splat"
+  status = 200
+
+[[redirects]]
+  from = "/iptv-brasil"
+  to = "/iptv-brasil.html"
+  status = 200
+
+[[redirects]]
+  from = "/iptv-paraiba"
+  to = "/iptv-paraiba.html"
+  status = 200
+
+[[redirects]]
+  from = "/teste-iptv"
+  to = "/teste-iptv.html"
+  status = 200
+
+[[redirects]]
+  from = "/iptv-smart-tv"
+  to = "/iptv-smart-tv.html"
+  status = 200
